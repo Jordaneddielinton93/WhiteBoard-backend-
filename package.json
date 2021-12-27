@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "bin": {
+    "server": "www.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r dotenv/config bin/www.js",
+    "dev": "nodemon -r dotenv/config bin/www.js ",
+    "create_BC_Tables": "node -r dotenv/config ./db/scripts/create_BC_Tables.js",
+    "populate_BC_Tables1": "node -r dotenv/config ./db/scripts/populate_BC_Tables_1.js",
+    "populate_BC_Tables2": "node -r dotenv/config ./db/scripts/populate_BC_Tables_2.js",
+    "drop_BC_Tables":"node -r dotenv/config ./db/scripts/drop_BC_Tables.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
