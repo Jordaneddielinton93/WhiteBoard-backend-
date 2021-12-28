@@ -1,6 +1,7 @@
 import express from "express";
 import  getAllCampers  from "../models/getAllcampers.js";
-// import { getAllUsersAndScores, updateUsersAndScores } from "../models/usersAndScores/getAllUsers.js";
+import getCamperById from "../models/getCamperById.js";
+
 
 
 let Router= express.Router()
@@ -9,6 +10,12 @@ Router.get("/",async (req,res)=>{
   let allUsers = await getAllCampers()
   
   res.json(allUsers)
+})
+
+Router.get("/:id",async (req,res)=>{
+  let {id}=req.params
+  let camper = await getCamperById(id)
+  res.json(camper)
 })
 
 // Router.put("/:id",async (req,res)=>{
